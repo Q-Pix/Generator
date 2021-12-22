@@ -76,7 +76,7 @@ else
                     -s $(PACKAGE_LIBNOVRS) \
                   -rml $(PACKAGE_PCM) \
                   -rmf $(PACKAGE_ROOTMAP) \
-                  $(ROOT_DICT_GEN_INCLUDES) $(DICTGEN_HEADERS) LinkDef.h
+                  $(ROOT_DICT_GEN_INCLUDES)  $(DICTGEN_HEADERS) LinkDef.h
 # clean rootmap output up a bit ... (magic?)
 # -e "s/\.dylib\.so/\.dylib/g" 
 #   order matters here

@@ -1001,6 +1001,7 @@ int  GHepRecord::GetPrintLevel()
 void GHepRecord::Print(ostream & stream) const
 {
   // Print levels:
+  //  -1 -> skip printing
   //  0 -> prints particle list
   //  1 -> prints particle list + event flags
   //  2 -> prints particle list + event flags + wght/xsec
@@ -1009,8 +1010,8 @@ void GHepRecord::Print(ostream & stream) const
   // 11 -> as in level 1 but showing particle positions too
   // 12 -> as in level 2 but showing particle positions too
   // 13 -> as in level 3 but showing particle positions too
-
-   bool accept_input_print_level = 
+    if(fPrintLevel==-1) {std::cout<< "Skipping printing ..." <<endl; return;}
+    bool accept_input_print_level =
        (fPrintLevel >= 0 && fPrintLevel <= 3) ||
        (fPrintLevel >=10 && fPrintLevel <=13);
    
